@@ -7,6 +7,7 @@ export const Router: React.FC = () =>{
         <Routes>
             <Route index element={<div>HOMEPAGE</div>}/>
             <Route path="/about" element={<div>ABOUTt</div>}/>
+            <Route path="/pippo" element={<div>PIPPO</div>}/>
             <Route path="*" element={<div>404</div>}/>
         </Routes>
     </BrowserRouter>
