@@ -1,32 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {Button, ChakraProvider} from "@chakra-ui/react";
-
-const router = createBrowserRouter([
-  {
-    path: '*',
-    element: <div>404</div>,
-  },
-  {
-    path: "/",
-    element: <div>HOME PAGE</div>,
-  },
-  {
-    path: "/about",
-    element: <div>ABOUT</div>,
-  },
-]);
-
-
+import { ChakraProvider} from "@chakra-ui/react";
+import {Navbar} from "./components/navbar/navbar.tsx";
+import {Router} from "./router.tsx";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ChakraProvider>
-      <div>
-        <RouterProvider router={router}/>
-      </div>
-    </ChakraProvider>
+      <ChakraProvider>
+        <Router/>
+      </ChakraProvider>
   </React.StrictMode>
 );
