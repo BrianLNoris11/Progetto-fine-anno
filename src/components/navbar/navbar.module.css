@@ -1,7 +1,7 @@
 .navbar{
     width: 100%;
     height: 10vh;
-    background: linear-gradient(90deg, rgba(0,0,0,1) 33%,  rgba(56,56,56,1) 87%);
+    background: linear-gradient(104deg, rgba(56,56,56,1) 9%, rgba(52,73,94,1) 67%);
     padding: 2%;
     display: flex;
     flex-direction: row;
@@ -9,7 +9,7 @@
 }
 
 .drawer{
-    background: rgba(56,56,56,1)
+    background:rgba(52,73,94,1)
 }
 
 .title{

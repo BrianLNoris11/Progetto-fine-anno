@@ -101,7 +101,7 @@ export const Navbar: React.FC = () => {
               }}
             >
               <DrawerOverlay />
-              <DrawerContent className={styles.drawer}>
+              <DrawerContent style={{background: "rgba(52,73,94,1)"}}>
                 <DrawerCloseButton color="white" />
                 <DrawerHeader color="white" style={{ marginBottom: "1em" }}>
                   Menu
