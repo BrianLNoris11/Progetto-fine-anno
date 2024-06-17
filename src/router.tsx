@@ -3,6 +3,8 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Navbar} from "./components/navbar/navbar.tsx";
 // @ts-ignore
 import {HomePage} from "./components/pages/homepage/home.tsx";
+// @ts-ignore
+import {Contacts} from "./components/pages/contacts/contacts.tsx";
 
 export const Router: React.FC = () =>{
     return <BrowserRouter>
@@ -11,6 +13,7 @@ export const Router: React.FC = () =>{
             <Route index element={<HomePage/>}/>
             <Route path="/about" element={<div>ABOUTt</div>}/>
             <Route path="/pippo" element={<div>PIPPO</div>}/>
+            <Route path="/contacts" element={<div>CONTATTI</div>}/>
             <Route path="*" element={<div>404</div>}/>
         </Routes>
     </BrowserRouter>

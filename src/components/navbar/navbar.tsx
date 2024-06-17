@@ -60,15 +60,15 @@ export const Navbar: React.FC = () => {
               Home
             </Button>
             <Button
-              colorScheme={location.pathname === "/about" && "orange"}
-              textColor={location.pathname === "/about" ? "black" : "white"}
+              colorScheme={location.pathname === "/contacts" && "orange"}
+              textColor={location.pathname === "/contacts" ? "black" : "white"}
               onClick={() => {
                 setOpenDrawer(false);
-                navigate("/about");
+                navigate("/contacts");
               }}
               className={styles.MenuBtn}
             >
-              About
+              Contatti 
             </Button>
             <Button
               colorScheme={location.pathname === "/pippo" && "orange"}
