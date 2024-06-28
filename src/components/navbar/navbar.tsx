@@ -71,15 +71,15 @@ export const Navbar: React.FC = () => {
               Contatti 
             </Button>
             <Button
-              colorScheme={location.pathname === "/pippo" && "orange"}
-              textColor={location.pathname === "/pippo" ? "black" : "white"}
+              colorScheme={location.pathname === "/products" && "orange"}
+              textColor={location.pathname === "/products" ? "black" : "white"}
               onClick={() => {
                 setOpenDrawer(false);
-                navigate("/pippo");
+                navigate("/products");
               }}
               className={styles.MenuBtn}
             >
-              Pippo
+              Prodotti
             </Button>
           </div>
         ) : (
