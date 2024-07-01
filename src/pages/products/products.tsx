@@ -1,3 +1,4 @@
+// @ts-ignore
 import styles from "./products.module.css";
 import {
   Box, Button,
