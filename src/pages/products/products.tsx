@@ -14,8 +14,11 @@ import React from "react";
 import { Icon } from "@iconify-icon/react";
 // @ts-ignore
 import {products} from "../../data/products.ts";
+import {useNavigate} from "react-router-dom";
 
 export const Products: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.page}>
       <Box className={styles.header}>
@@ -25,7 +28,7 @@ export const Products: React.FC = () => {
       <div className={styles.products}>
         <SimpleGrid columns={[1,3,5,6]} minChildWidth="250px" spacing="30px">
           {products?.map((product) => (
-            <Card className={styles.productCard}>
+            <Card className={styles.productCard} key={product.id}>
               <CardHeader>
                 <Heading size="md" className={styles.productTitle}>
                   {product.title}
@@ -39,23 +42,23 @@ export const Products: React.FC = () => {
                 />
 
                 <Box display="flex" mt="2" alignItems="center">
-                  {Array(Math.floor(product.rating))
+                  {Array(Math.round(product.rating))
                     .fill("")
                     .map((_, index) => (
                       <Icon key={index} icon="ph:star-fill" />
                     ))}
-                  {Array(5 - Math.floor(product.rating))
+                  {Array(5 - Math.round(product.rating))
                     .fill("")
                     .map((_, index) => (
                       <Icon key={index} icon="ph:star" />
                     ))}
                   <Box as="span" ml="2" color="gray.600" fontSize="sm">
-                    {product.rating}
+                    {Math.round(product.rating)}
                   </Box>
                 </Box>
               </CardBody>
               <CardFooter>
-                <Button colorScheme="orange">Visualizza</Button>
+                <Button colorScheme="orange" onClick={()=> {navigate(`/products/${product.id}`)}}>Visualizza</Button>
               </CardFooter>
             </Card>
           ))}
