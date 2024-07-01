@@ -1,12 +1,20 @@
 import { useNavigate, useParams } from "react-router-dom"; // @ts-ignore
-import React, { useEffect, useState } from "react";
-// @ts-ignore
+import React, { useEffect, useState } from "react"; // @ts-ignore
 import { products } from "../../../data/products.ts";
 import { Product } from "../../../models";
-import {Box, Button, Heading, Image, Text, Breadcrumb, BreadcrumbItem, BreadcrumbLink} from "@chakra-ui/react";
-// @ts-ignore
+import {
+  Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Button,
+  Heading,
+  Image,
+  Text,
+} from "@chakra-ui/react"; // @ts-ignore
 import styles from "./index.module.css";
-import { Icon } from "@iconify-icon/react";
+import { Icon } from "@iconify-icon/react"; // @ts-ignore
+import { useShopStore } from "../../../store/shopStore.ts";
 
 export const ProductDetail: React.FC = () => {
   const params = useParams();
@@ -19,6 +27,10 @@ export const ProductDetail: React.FC = () => {
     rating: 0,
     title: "",
   });
+  // @ts-ignore
+  const addToCart = useShopStore((state) => state.addToCart);
+  // @ts-ignore
+  const cart = useShopStore((state) => state.cart);
 
   useEffect(() => {
     const itemFound = products?.find((item: Product) => item.id === params.id);
@@ -28,6 +40,10 @@ export const ProductDetail: React.FC = () => {
     }
     setProduct(itemFound);
   }, []);
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
 
   return (
     <Box className={styles.page}>
@@ -39,7 +55,9 @@ export const ProductDetail: React.FC = () => {
           <BreadcrumbLink href="/products">Prodotti</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <BreadcrumbLink href={"#"} isCurrentPage>{product.title}</BreadcrumbLink>
+          <BreadcrumbLink href={"#"} isCurrentPage>
+            {product.title}
+          </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
       <Box className={styles.detailPage}>
@@ -72,10 +90,17 @@ export const ProductDetail: React.FC = () => {
           </Box>
           <Box className={styles.detailFooter}>
             <Heading size="md">${product.price}</Heading>
-            <Button className={styles.ShopBtn} colorScheme={"orange"} color="black">
-              <Icon icon="ph:shopping-bag" />
-              Aggiungi al carrello
-            </Button>
+            {/*<Button*/}
+            {/*  className={styles.ShopBtn}*/}
+            {/*  colorScheme={"orange"}*/}
+            {/*  color="black"*/}
+            {/*  onClick={async ()=> {*/}
+            {/*    await addToCart(product.id)*/}
+            {/*  }}*/}
+            {/*>*/}
+            {/*  <Icon icon="ph:shopping-bag" />*/}
+            {/*  Aggiungi al carrello*/}
+            {/*</Button>*/}
           </Box>
         </Box>
       </Box>
