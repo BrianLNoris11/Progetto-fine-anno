@@ -12,9 +12,9 @@ import {
 } from "@chakra-ui/react";
 import Slider from "react-slick";
 // @ts-ignore
-import homeBG from "../../../assets/img/homeBG.png";
-import gymFood from "../../../assets/img/gymFood.jpg";
-import peopleWorkout from "../../../assets/img/peopleWorkout.jpg";
+import homeBG from "../../assets/img/homeBG.png";
+import gymFood from "../../assets/img/gymFood.jpg";
+import peopleWorkout from "../../assets/img/peopleWorkout.jpg";
 import Carousel from "react-multi-carousel";
 
 export const HomePage: React.FC = () => {
